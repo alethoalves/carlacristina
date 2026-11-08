@@ -1,6 +1,7 @@
 /* eslint-disable @next/next/no-img-element */
 import type { Metadata } from "next";
 import { resolveCV, type ResolvedExperience as Experience } from "@/content/cv";
+import { SiteQR } from "@/components/print/SiteQR";
 
 const {
   competencies,
@@ -169,10 +170,13 @@ export default function CVPage() {
               Pronta para somar ao seu time <span className="serif">— remoto ou híbrido.</span>
             </p>
           </div>
-          <div className="cv-closing-contact mono">
-            <span>{profile.phone}</span>
-            <span>{profile.email}</span>
-            {profile.site && <span>{profile.site}</span>}
+          <div className="cv-closing-right">
+            <div className="cv-closing-contact mono">
+              <span>{profile.phone}</span>
+              <span>{profile.email}</span>
+              {profile.site && <span>{profile.site}</span>}
+            </div>
+            <SiteQR track={null} className="cv-qr-closing" />
           </div>
         </div>
         <Footer page={2} />

@@ -74,14 +74,46 @@
   color: var(--c-muted);
 }
 .op-courses {
-  margin-top: 2mm;
+  margin-top: 1.2mm;
   font-size: 7.6pt;
   color: var(--c-muted);
 }
 .op-body .cv-comp {
-  gap: 1.8mm;
+  gap: 1.4mm;
 }
 
 .op-body ~ .cv-footer {
   bottom: 5mm;
+}
+
+/* Ferramentas mais compactas para abrir espaço ao QR */
+.op-body .cv-chips {
+  gap: 1mm;
+}
+.op-body .cv-chips li {
+  padding: 0.35mm 1.8mm;
+  font-size: 6.9pt;
+}
+
+/* QR no pé da coluna lateral, alinhado ao fim do conteúdo principal */
+.op-body .cv-side {
+  display: flex;
+  flex-direction: column;
+}
+.op-qr {
+  margin-top: auto;
+  padding-top: 3mm;
+}
+.op-qr .cv-qr-code {
+  width: 13mm;
+  height: 13mm;
+  padding: 0;
+}
+.op-qr .cv-qr-kicker {
+  color: var(--c-accent);
+  opacity: 1;
+}
+.op-qr .cv-qr-url {
+  font-size: 6.4pt;
+  color: var(--c-ink2);
 }

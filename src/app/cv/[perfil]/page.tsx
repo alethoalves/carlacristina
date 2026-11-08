@@ -1,6 +1,7 @@
 /* eslint-disable @next/next/no-img-element */
 import type { Metadata } from "next";
 import { resolveCV, TRACKS, type ResolvedExperience, type Track } from "@/content/cv";
+import { SiteQR } from "@/components/print/SiteQR";
 import "../print.css";
 import "./one-page.css";
 
@@ -130,6 +131,7 @@ export default async function OnePageCV({ params }: { params: Promise<{ perfil: 
               ))}
               <p className="op-courses">Cursos: {cv.courses.join(" · ")}</p>
             </Block>
+            <SiteQR track={perfil} className="op-qr" />
           </aside>
         </div>
 

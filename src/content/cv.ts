@@ -33,7 +33,10 @@ export const profile = {
   email: "carlacristinafelipe90@gmail.com",
   // TODO: preencher quando houver LinkedIn / domínio publicado
   linkedin: "",
-  site: "",
+  // Endereço do site publicado (sem barra no fim), ex.: "https://carlafelipe.com.br".
+  // Enquanto vazio, os PDFs saem sem QR code. Para testar, rode o servidor com SITE_URL=... .
+  siteUrl: process.env.SITE_URL || "https://carlacristinafelipe.com.br",
+  site: "carlacristinafelipe.com.br",
   objective: "Posições de gestão comercial, vendas e gerência — em regime remoto ou híbrido.",
   tagline: "Transformo atendimento em venda, processo em rotina que funciona e equipe em resultado.",
   summary:
@@ -364,6 +367,15 @@ export const trackConfig: Record<Track, TrackConfig> = {
     ],
   },
 };
+
+/* ───────────────────────── Link do site por versão ───────────────────────── */
+
+/** Página do site que corresponde a cada PDF (o QR code aponta para ela). */
+export function siteLink(track: Track | null): { url: string; label: string } | null {
+  if (!profile.siteUrl) return null;
+  const url = `${profile.siteUrl}/${track ?? "completo"}`;
+  return { url, label: url.replace(/^https?:\/\//, "") };
+}
 
 /* ───────────────────────── Resolução por versão ───────────────────────── */
 
