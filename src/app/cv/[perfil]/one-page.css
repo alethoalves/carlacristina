@@ -1,0 +1,87 @@
+/* Ajustes da versão de 1 página (sobre print.css) */
+.op-header {
+  height: 54mm;
+}
+.op-portrait {
+  height: 74mm;
+  top: 3mm;
+  right: 12mm;
+}
+.op-header-text {
+  top: 0;
+  bottom: 0;
+  justify-content: center;
+  width: 120mm;
+}
+.op-name {
+  margin-top: 0;
+  font-size: 30pt;
+  line-height: 0.95;
+}
+.op-headline {
+  margin-top: 2.5mm;
+  font-size: 14pt;
+}
+.op-tagline {
+  margin-top: 3mm;
+  font-size: 9pt;
+}
+.op-body {
+  padding-top: 6.5mm;
+  grid-template-columns: 1fr 50mm;
+  gap: 8mm;
+}
+.op-body .cv-block + .cv-block {
+  margin-top: 4.6mm;
+}
+.op-body .cv-summary {
+  font-size: 8.6pt;
+}
+.op-job + .op-job {
+  margin-top: 3mm;
+  padding-top: 3mm;
+}
+.op-job .cv-bullets {
+  margin-top: 1.2mm;
+  gap: 0.6mm;
+}
+.op-job-sub {
+  margin-top: 0.6mm;
+  font-size: 7.8pt;
+}
+.op-others {
+  display: flex;
+  flex-direction: column;
+}
+.op-others li {
+  display: flex;
+  justify-content: space-between;
+  gap: 4mm;
+  padding: 1.3mm 0;
+  border-bottom: 0.2mm dashed var(--c-line);
+  color: var(--c-ink2);
+}
+.op-others li:last-child {
+  border-bottom: 0;
+}
+.op-others strong {
+  font-weight: 600;
+  color: var(--c-ink);
+}
+.op-others .mono {
+  flex-shrink: 0;
+  font-size: 6.8pt;
+  color: var(--c-muted);
+}
+.op-courses {
+  margin-top: 2mm;
+  font-size: 7.6pt;
+  color: var(--c-muted);
+}
+.op-body .cv-comp {
+  gap: 1.8mm;
+}
+
+.op-body ~ .cv-footer {
+  bottom: 5mm;
+}
