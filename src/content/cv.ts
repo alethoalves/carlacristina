@@ -2,7 +2,7 @@
  * Fonte única de conteúdo do currículo.
  *
  * Versões (segmentação por tipo de vaga):
- *   - geral   → site "/"            · PDF /cv (2 páginas)
+ *   - geral   → site "/completo"    · PDF /cv (2 páginas)
  *   - vendas  → site "/vendas"      · PDF /cv/vendas (1 página)
  *   - gestao  → site "/gestao"      · PDF /cv/gestao (1 página)
  *
@@ -23,7 +23,7 @@ export const profile = {
   firstName: "Carla",
   lastName: "Felipe",
   headline: "Gestão Comercial & Operações",
-  roles: ["Vendas consultivas", "Gestão de operações", "Eventos & automação"],
+  roles: ["Vendas consultivas", "Gestão de operações", "Automação de atendimento"],
   location: "Goiânia — GO",
   availability: "Remoto ou híbrido",
   phone: "(62) 98101-0975",
@@ -40,7 +40,7 @@ export const profile = {
   objective: "Posições de gestão comercial, vendas e gerência — em regime remoto ou híbrido.",
   tagline: "Transformo atendimento em venda, processo em rotina que funciona e equipe em resultado.",
   summary:
-    "Gestora comercial e de operações com 20 anos de experiência em vendas consultivas, atendimento e administração nos setores de saúde e estética, tecnologia, varejo, serviços e eventos acadêmicos. Atuei como closer e fui promovida a gerente de unidade em clínica de alto padrão, gerenciei um congresso científico de grande porte e estruturo automações de atendimento no WhatsApp que aceleram o funil de vendas. Formação em Publicidade e Propaganda.",
+    "Gestora comercial e de operações com 20 anos de experiência em vendas consultivas, atendimento e administração nos setores de saúde e estética, tecnologia, varejo e serviços. Atuei como closer e fui promovida a gerente de unidade em clínica de alto padrão, onde liderei equipe, compras e rotinas administrativas, e estruturo automações de atendimento no WhatsApp que aceleram o funil de vendas. Formação em Publicidade e Propaganda.",
   about:
     "Sou a Carla: 20 anos em vendas e gestão, de closer a gerente de unidade. Cuido do cliente, organizo o processo e acompanho a meta de perto.",
   pdf: "/carla-felipe-curriculo.pdf",
@@ -51,7 +51,7 @@ export type Profile = typeof profile;
 export const stats = [
   { value: 20, suffix: "", label: "anos de experiência", note: "desde 2006" },
   { value: 8, suffix: "", label: "empresas em que atuei", note: "do varejo à tecnologia" },
-  { value: 5, suffix: "", label: "segmentos de mercado", note: "saúde · tech · varejo · serviços · eventos" },
+  { value: 4, suffix: "", label: "segmentos de mercado", note: "saúde · tech · varejo · serviços" },
 ];
 
 /* ───────────────────────── Competências ───────────────────────── */
@@ -98,14 +98,6 @@ export const competencies: Competency[] = [
     tags: ["Calendário editorial", "Instagram", "Fotos e vídeos", "Copywriting"],
   },
   {
-    id: "eventos",
-    title: "Gestão de eventos",
-    short: "Congressos · Acadêmicos",
-    description:
-      "Planejamento e execução de eventos de grande porte: contratação de espaço, gestão de inscrições, credenciamento e coordenação da equipe de hosts.",
-    tags: ["Contratação de espaço", "Inscrições", "Equipe de hosts", "Operação no dia"],
-  },
-  {
     id: "dados",
     title: "Dados & Excel avançado",
     short: "Controle · Indicadores",
@@ -121,7 +113,6 @@ export const tools = [
   "CRM Kinbox",
   "WhatsApp Business",
   "Automação de fluxos",
-  "PLIC",
   "Google Workspace",
   "Meta Business Suite",
   "Instagram",
@@ -136,7 +127,7 @@ export const skillsCore = [
   "Negociação e fechamento",
   "Automação de WhatsApp",
   "Excel avançado",
-  "Gestão de eventos",
+  "Compras e estoque",
 ];
 
 /* ───────────────────────── Experiências ───────────────────────── */
@@ -277,31 +268,6 @@ export const experiences: Experience[] = [
   },
 ];
 
-export const featuredProject = {
-  company: "Wissentec",
-  product: "PLIC",
-  role: "Gerente de Evento",
-  period: "2025 e 2026",
-  event: "Congresso de Iniciação Científica da UnB e do Distrito Federal",
-  participants: 3000,
-  context:
-    "A Wissentec desenvolve o PLIC, plataforma que organiza eventos acadêmicos de grandes universidades públicas e privadas.",
-  bullets: [
-    "Gerenciei o evento de ponta a ponta, do planejamento à operação nos dias do congresso.",
-    "Negociei e contratei o espaço, alinhando estrutura, orçamento e cronograma.",
-    "Conduzi a gestão das inscrições de participantes e convidados.",
-    "Liderei a equipe de hosts responsável pela recepção, credenciamento e fluxo do público.",
-  ],
-  /** Bullets no estilo do currículo (PDF). */
-  cvBullets: [
-    "Gestão do evento de ponta a ponta, com mais de 3 mil participantes.",
-    "Negociação e contratação do espaço; gestão das inscrições de participantes e convidados.",
-    "Coordenação da equipe de hosts: recepção, credenciamento e fluxo do público.",
-  ],
-  /** Versões em que o projeto aparece completo (nas outras, uma linha). */
-  focus: G,
-};
-
 /* ───────────────────────── Formação ───────────────────────── */
 
 export const education = [
@@ -348,7 +314,7 @@ export const trackConfig: Record<Track, TrackConfig> = {
     label: "Gestão",
     profile: {
       headline: "Gestão de Operações & Unidade",
-      roles: ["Gestão de unidade", "Operações & compras", "Eventos"],
+      roles: ["Gestão de unidade", "Operações & compras", "Liderança de equipes"],
       tagline: "Equipe alinhada, processo organizado e operação que não para.",
       about:
         "Sou a Carla: gestora de unidade e operações. Lidero equipes, organizo rotinas, compras e estoque.",
@@ -357,9 +323,9 @@ export const trackConfig: Record<Track, TrackConfig> = {
       objective: "Vagas de gerência, coordenação administrativa e operações — remoto ou híbrido.",
       pdf: "/carla-felipe-curriculo-gestao.pdf",
     },
-    competencies: ["operacoes", "eventos", "dados", "automacao"],
-    tools: ["Excel avançado", "Google Workspace", "CRM Kinbox", "PLIC", "WhatsApp Business", "Automação de fluxos"],
-    skills: ["Liderança de equipes", "Compras e estoque", "Rotinas administrativas", "Gestão de fornecedores", "Conformidade documental", "Gestão de eventos"],
+    competencies: ["operacoes", "vendas", "dados", "automacao"],
+    tools: ["Excel avançado", "Google Workspace", "CRM Kinbox", "WhatsApp Business", "Automação de fluxos"],
+    skills: ["Liderança de equipes", "Compras e estoque", "Rotinas administrativas", "Gestão de fornecedores", "Conformidade documental", "Controle financeiro"],
     stats: [
       { value: 20, suffix: "", label: "anos de experiência", note: "desde 2006" },
       { value: 4, suffix: "", label: "cargos de gestão e administração", note: "ELO · Sá Chica · DUO47 · Studio Fogo" },
@@ -390,7 +356,6 @@ export type ResolvedCV = {
   skills: string[];
   experiences: ResolvedExperience[]; // completas
   others: ResolvedExperience[]; // só uma linha
-  project: typeof featuredProject & { main: boolean };
   education: typeof education;
   courses: string[];
 };
@@ -406,7 +371,6 @@ export function resolveCV(track: Track | null = null): ResolvedCV {
       skills: skillsCore,
       experiences: experiences.map((e) => ({ ...e, bullets: e.bullets.map((b) => b.text) })),
       others: [],
-      project: { ...featuredProject, main: true },
       education,
       courses,
     };
@@ -425,20 +389,7 @@ export function resolveCV(track: Track | null = null): ResolvedCV {
     skills: cfg.skills,
     experiences: experiences.filter((e) => e.focus.includes(track)).map(toResolved),
     others: experiences.filter((e) => !e.focus.includes(track)).map(toResolved),
-    project: { ...featuredProject, main: featuredProject.focus.includes(track) },
     education,
     courses,
   };
 }
-
-export const referenceLetter = {
-  city: "Brasília, DF",
-  date: "7 de novembro de 2026",
-  companyCnpj: "61.424.802/0001-13",
-  signerName: "Aletho Alves de Sá Oliveira",
-  signerRole: "Sócio",
-  /** Contatos institucionais (linha 1) e diretos do signatário (linha 2). */
-  signerContact: "contato@plic.app.br · +55 61 99165-1494 · contato.plic.app.br",
-  signerDirect: "Contato direto: alethoalves@gmail.com · +55 61 98328-7000",
-  eventEdition: "edições 2025 e 2026",
-};

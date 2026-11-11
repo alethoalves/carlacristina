@@ -28,7 +28,6 @@ export function Footer() {
         </ul>
         <ul className="space-y-2 md:col-span-4">
           <li><a href={profile.pdf} download className="hover:text-accent">Currículo em PDF</a></li>
-          <li><Link href="/carta-wissentec" className="hover:text-accent">Carta de referência — Wissentec</Link></li>
           <li><a href={profile.whatsappHref} target="_blank" rel="noopener noreferrer" className="hover:text-accent">WhatsApp</a></li>
           <li className="pt-3 text-muted">Outras versões:</li>
           {TRACKS.filter((t) => t !== track).map((t) => (

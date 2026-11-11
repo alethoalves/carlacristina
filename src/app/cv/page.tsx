@@ -8,7 +8,6 @@ const {
   courses,
   education,
   experiences,
-  project: fp,
   profile,
   skills: skillsCore,
   stats,
@@ -99,13 +98,6 @@ export default function CVPage() {
                 ))}
               </ul>
             </Block>
-            <Block title="Projeto especial">
-              <p className="cv-side-text">
-                <strong>{fp.company} ({fp.product})</strong> — {fp.role}
-                {fp.period ? ` · ${fp.period}` : ""}. Gestão do {fp.event} (+
-                {fp.participants.toLocaleString("pt-BR")} participantes): espaço, inscrições e equipe de hosts.
-              </p>
-            </Block>
           </aside>
         </div>
         <Footer page={1} />
@@ -153,12 +145,6 @@ export default function CVPage() {
                   <li key={c}>{c}</li>
                 ))}
               </ul>
-            </Block>
-            <Block title="Referências">
-              <p className="cv-side-text">
-                Carta de referência da Wissentec sobre a gestão do Congresso de Iniciação Científica da UnB e do DF —
-                disponível mediante solicitação.
-              </p>
             </Block>
           </aside>
         </div>

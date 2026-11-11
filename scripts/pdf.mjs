@@ -1,4 +1,4 @@
-// Gera os PDFs a partir das páginas /cv e /carta-wissentec usando o Chrome instalado.
+// Gera os PDFs a partir das páginas /cv usando o Chrome instalado.
 // Uso: com o site rodando (npm run dev ou npm start):  BASE_URL=http://localhost:3000 npm run pdf
 // Opcional: PREVIEW_DIR=./.preview gera PNGs de cada folha para revisão.
 import puppeteer from "puppeteer-core";
@@ -13,7 +13,6 @@ const jobs = [
   { path: "/cv", out: "public/carla-felipe-curriculo.pdf", title: "Currículo — Carla C. Felipe" },
   { path: "/cv/vendas", out: "public/carla-felipe-curriculo-vendas.pdf", title: "Currículo (Vendas) — Carla C. Felipe" },
   { path: "/cv/gestao", out: "public/carla-felipe-curriculo-gestao.pdf", title: "Currículo (Gestão) — Carla C. Felipe" },
-  { path: "/carta-wissentec", out: "public/carta-referencia-wissentec.pdf", title: "Carta de referência — Wissentec" },
 ];
 
 const browser = await puppeteer.launch({ executablePath: CHROME, headless: true });

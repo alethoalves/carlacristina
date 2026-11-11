@@ -14,11 +14,11 @@ const serif = Instrument_Serif({
 export const metadata: Metadata = {
   title: "Carla Felipe — Gestão Comercial & Operações",
   description:
-    "Currículo de Carla C. Felipe: 20 anos em vendas consultivas, gestão de operações, automação de atendimento e eventos. Disponível para remoto ou híbrido.",
+    "Currículo de Carla C. Felipe: 20 anos em vendas consultivas, gestão de operações e automação de atendimento. Disponível para remoto ou híbrido.",
   openGraph: {
     title: "Carla Felipe — Gestão Comercial & Operações",
     description:
-      "Vendas consultivas, gestão de unidade, automação de WhatsApp e eventos de grande porte.",
+      "Vendas consultivas, gestão de unidade, liderança de equipes e automação de WhatsApp.",
     images: ["/img/carla-portrait.jpg"],
     locale: "pt_BR",
     type: "profile",

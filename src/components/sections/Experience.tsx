@@ -1,6 +1,5 @@
 "use client";
 
-import Link from "next/link";
 import { AnimatePresence, motion, useInView, useScroll, useSpring } from "motion/react";
 import { useRef, useState } from "react";
 import { useCV } from "@/content/CVContext";
@@ -8,7 +7,7 @@ import type { ResolvedExperience as Exp } from "@/content/cv";
 import { FadeUp, WordsReveal, ease } from "@/components/motion/Reveal";
 
 export function Experience() {
-  const { experiences, others, project: fp } = useCV();
+  const { experiences, others } = useCV();
   const listRef = useRef<HTMLOListElement>(null);
   const { scrollYProgress } = useScroll({ target: listRef, offset: ["start 70%", "end 60%"] });
   const fill = useSpring(scrollYProgress, { stiffness: 120, damping: 30 });
@@ -47,37 +46,13 @@ export function Experience() {
             ))}
           </ol>
 
-          {/* Projeto especial — discreto (só nas versões em que é relevante) */}
-          {fp.main && (
-          <FadeUp className="mt-16 rounded-2xl border border-line p-6 md:mt-20 md:p-8">
-            <p className="label text-muted">
-              Projeto especial{fp.period ? ` · ${fp.period}` : ""}
-            </p>
-            <h3 className="mt-3 text-2xl font-medium leading-tight tracking-[-0.03em] md:text-[1.75rem]">
-              {fp.company} <span className="serif italic text-accent">— {fp.role}</span>
-            </h3>
-            <p className="mt-3 max-w-2xl text-base leading-relaxed text-muted">
-              Gestão do {fp.event}, com mais de {fp.participants.toLocaleString("pt-BR")} participantes: contratação do
-              espaço, inscrições e coordenação da equipe de hosts. {fp.context}
-            </p>
-            <Link
-              href="/carta-wissentec"
-              className="label mt-5 inline-flex items-center gap-2 text-ink underline-offset-4 hover:underline"
-            >
-              Ler carta de referência →
-            </Link>
-          </FadeUp>
-          )}
 
           {/* Outras experiências — uma linha cada */}
-          {(others.length > 0 || !fp.main) && (
+          {others.length > 0 && (
             <FadeUp className="mt-16 md:mt-20">
               <p className="label mb-4 text-muted">Outras experiências</p>
               <ul className="border-t border-line">
-                {[
-                  ...others.map((o) => ({ key: o.company, name: o.company, role: o.role, period: o.period })),
-                  ...(!fp.main ? [{ key: fp.company, name: fp.company, role: `${fp.role} · ${fp.product}`, period: fp.period || "Projeto" }] : []),
-                ].map((o) => (
+                {others.map((o) => ({ key: o.company, name: o.company, role: o.role, period: o.period })).map((o) => (
                   <li
                     key={o.key}
                     className="flex flex-col gap-1 border-b border-line py-4 sm:flex-row sm:items-baseline sm:justify-between sm:gap-6"

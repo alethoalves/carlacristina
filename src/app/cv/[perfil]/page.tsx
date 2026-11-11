@@ -17,12 +17,9 @@ export const metadata: Metadata = { robots: { index: false } };
 export default async function OnePageCV({ params }: { params: Promise<{ perfil: Track }> }) {
   const { perfil } = await params;
   const cv = resolveCV(perfil);
-  const { profile, project: fp } = cv;
+  const { profile } = cv;
 
-  const others = [
-    ...cv.others.map((o) => ({ key: o.company, name: o.company, role: o.role, period: o.period })),
-    ...(!fp.main ? [{ key: fp.company, name: `${fp.company} (${fp.product})`, role: fp.role, period: fp.period || "Projeto" }] : []),
-  ];
+  const others = cv.others.map((o) => ({ key: o.company, name: o.company, role: o.role, period: o.period }));
 
   return (
     <div className="cv-root">
@@ -58,22 +55,6 @@ export default async function OnePageCV({ params }: { params: Promise<{ perfil: 
               {cv.experiences.map((e) => (
                 <Job key={e.company + e.start} e={e} />
               ))}
-              {fp.main && (
-                <article className="cv-job op-job">
-                  <div className="cv-job-head">
-                    <h3>
-                      {fp.company} ({fp.product}) <span className="serif">— {fp.role}</span>
-                    </h3>
-                    <span className="mono cv-job-period">{fp.period || "Projeto"}</span>
-                  </div>
-                  <p className="cv-job-summary op-job-sub">{fp.event}</p>
-                  <ul className="cv-bullets">
-                    {fp.cvBullets.map((b) => (
-                      <li key={b}>{b}</li>
-                    ))}
-                  </ul>
-                </article>
-              )}
             </Block>
 
             {others.length > 0 && (
